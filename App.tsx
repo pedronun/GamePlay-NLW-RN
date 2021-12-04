@@ -8,10 +8,7 @@ import {
 } from "@expo-google-fonts/rajdhani";
 import AppLoading from "expo-app-loading";
 
-import { LinearGradient } from "expo-linear-gradient";
-
-import { SignIn } from "./src/pages/SignIn";
-import { theme } from "./src/global/global";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [isLoaded] = useFonts({
@@ -26,16 +23,13 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      style={{ flex: 1 }}
-      colors={[theme.colors.secondary80, theme.colors.secondary100]}
-    >
+    <>
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
-      <SignIn />
-    </LinearGradient>
+      <Routes />
+    </>
   );
 }
